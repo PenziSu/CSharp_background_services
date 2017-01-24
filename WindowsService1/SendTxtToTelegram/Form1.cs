@@ -64,12 +64,7 @@ namespace SendTxtToTelegram
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            User-Agent
-            Cookies
-            Session
-            ProxyIP
-
+        {            
             
         }
     }
