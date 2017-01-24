@@ -36,7 +36,7 @@ namespace WindowsService1
         private void MyTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             eventLog1.WriteEntry("Say Hello Timer Ticked.");
-            System.Windows.Forms.MessageBox.Show("Hello Dude");
+            System.Windows.Forms.MessageBox.Show("Hello Dude");            
         }
         protected override void OnStop()
         {

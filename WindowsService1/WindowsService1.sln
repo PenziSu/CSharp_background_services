@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsService1", "WindowsService1\WindowsService1.csproj", "{8B3B7A72-FB7A-49BD-81B3-77DC9AB5BA84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendTxtToTelegram", "SendTxtToTelegram\SendTxtToTelegram.csproj", "{30AF9A24-68D9-4C43-895B-8478A35EA29E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramSample", "TelegramSample\TelegramSample.csproj", "{B6B32756-0B82-4D43-9404-D47BC035503D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{8B3B7A72-FB7A-49BD-81B3-77DC9AB5BA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B3B7A72-FB7A-49BD-81B3-77DC9AB5BA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B3B7A72-FB7A-49BD-81B3-77DC9AB5BA84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30AF9A24-68D9-4C43-895B-8478A35EA29E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30AF9A24-68D9-4C43-895B-8478A35EA29E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30AF9A24-68D9-4C43-895B-8478A35EA29E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30AF9A24-68D9-4C43-895B-8478A35EA29E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6B32756-0B82-4D43-9404-D47BC035503D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6B32756-0B82-4D43-9404-D47BC035503D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6B32756-0B82-4D43-9404-D47BC035503D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6B32756-0B82-4D43-9404-D47BC035503D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
