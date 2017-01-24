@@ -24,7 +24,7 @@ namespace BBSCrawler
             //將登入資料轉換編碼變成payload
             byte[] payload = Encoding.ASCII.GetBytes(data);
             //建立Cookie容器
-            CookieContainer CookiesPad = new CookieContainer();                        
+            CookieContainer CookiesBox = new CookieContainer();                        
             //建立Hppt請求資訊
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uri); //設定網址
             req.Timeout = 5000; //設定逾時設定5000
@@ -38,7 +38,7 @@ namespace BBSCrawler
             req.AllowAutoRedirect = true; //設定重新導向
             //req.AllowWriteStreamBuffering = false;
             req.ServicePoint.UseNagleAlgorithm = false; //設定演算法Nagle
-            req.CookieContainer = CookiesPad; //設定Cookie
+            req.CookieContainer = CookiesBox; //設定Cookie
             req.ServicePoint.ConnectionLimit = int.MaxValue; //設定最大連線數
             req.Method = "POST";  //設定提交方法
 
@@ -51,10 +51,10 @@ namespace BBSCrawler
             //取得回應
             var rspos = (HttpWebResponse)req.GetResponse();
 
-            //以迴圈將cookie資訊寫入Cookie儲存器
+            //以迴圈將cookie資訊寫入Cookie儲存器            
             foreach (Cookie cookie in rspos.Cookies)
             {
-                CookiesPad.Add(cookie);
+                CookiesBox.Add(cookie);
                 Console.WriteLine("=======");
                 Console.WriteLine(cookie);
                 Console.WriteLine("=======");
@@ -70,7 +70,9 @@ namespace BBSCrawler
             pageSource = streamReader.ReadToEnd();
 
             //呈現回應內容
-            Console.WriteLine(pageSource);
+            //Console.WriteLine(pageSource);
+            Console.WriteLine("Show me the COOKIE");
+            Console.WriteLine(CookiesBox);
 
             stream.Close();
             streamReader.Close();
