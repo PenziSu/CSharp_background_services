@@ -36,16 +36,18 @@ namespace BBSCrawler
             req.KeepAlive = true; 
             req.Referer = "http://web.ccgh/"; //設定參考網址
             req.AllowAutoRedirect = true; //設定重新導向
+            req.ProtocolVersion = HttpVersion.Version10;
             //req.AllowWriteStreamBuffering = false;
             req.ServicePoint.UseNagleAlgorithm = false; //設定演算法Nagle
             req.CookieContainer = CookiesBox; //設定Cookie
             req.ServicePoint.ConnectionLimit = int.MaxValue; //設定最大連線數
             req.Method = "POST";  //設定提交方法
+            
 
             //提交包含資料的請求
             using (Stream reqStream = req.GetRequestStream())
             {
-                reqStream.Write(payload, 0, payload.Length);
+                reqStream.Write(payload, 0, payload.Length);                
             }
 
             //取得回應
@@ -54,10 +56,8 @@ namespace BBSCrawler
             //以迴圈將cookie資訊寫入Cookie儲存器            
             foreach (Cookie cookie in rspos.Cookies)
             {
-                CookiesBox.Add(cookie);
-                Console.WriteLine("=======");
-                Console.WriteLine(cookie);
-                Console.WriteLine("=======");
+                CookiesBox.Add(cookie);                
+                Console.WriteLine(cookie);                
             }
 
             //將回應轉成Stream
@@ -70,9 +70,18 @@ namespace BBSCrawler
             pageSource = streamReader.ReadToEnd();
 
             //呈現回應內容
+            //Console.WriteLine("StatusDescription: {0}", rspos.StatusDescription);
+            //Console.WriteLine("Server: " + rspos.Server);
+            //Console.WriteLine("SupportsHeaders: " + rspos.SupportsHeaders);            
+            //Console.WriteLine("ProtocolVersion: " + rspos.ProtocolVersion);
+            //Console.WriteLine("CharacterSet: " + rspos.CharacterSet);
+            //Console.WriteLine("ContentLength: " + rspos.ContentLength);
+            //Console.WriteLine("Cookies: " + rspos.Cookies);
+            //Console.WriteLine("Headers: " + rspos.Headers);
+            //Console.WriteLine("ResponseUri: " + rspos.ResponseUri);
             //Console.WriteLine(pageSource);
-            Console.WriteLine("Show me the COOKIE");
-            Console.WriteLine(CookiesBox);
+            //Console.WriteLine("Show me the COOKIE");
+            //Console.WriteLine(CookiesBox);
 
             stream.Close();
             streamReader.Close();
