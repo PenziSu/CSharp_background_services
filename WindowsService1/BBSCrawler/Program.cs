@@ -72,9 +72,11 @@ namespace BBSCrawler
             //呈現回應內容
             Console.WriteLine(pageSource);
 
-            //顯示STOP文字當做結尾
-            Console.WriteLine("STOP!");            
-            Console.ReadLine();                        
+            stream.Close();
+            streamReader.Close();
+            rspos.Close();
+
+            Console.ReadKey();                            
         }       
     }
 }
